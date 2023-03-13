@@ -1,7 +1,7 @@
 import React from "react";
 import { useParams } from "react-router-dom";
 //routing single product: importing useParams to
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import CardProduct from "../components/Card";
 
 //importing function to get single product data from API
