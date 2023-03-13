@@ -11,6 +11,7 @@ import { fetchProductsData } from "./features/product/productSlice";
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { fetchUserData } from "./features/users/userSlice";
+import { fetchCartData } from "./features/cart/cartSlices";
 
 function App() {
   const dispatch = useDispatch();
@@ -18,6 +19,7 @@ function App() {
   useEffect(() => {
     dispatch(fetchProductsData());
     dispatch(fetchUserData());
+    dispatch(fetchCartData());
   });
 
   return (
