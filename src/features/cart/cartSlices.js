@@ -18,7 +18,7 @@ export default cartSlice.reducer;
 
 export function postCartData(data) {
   return async (dispatch) => {
-    const response = await axios.post(cartAPI, data);
+    await axios.post(cartAPI, data);
     dispatch(fetchCartData());
   };
 }

@@ -1,20 +1,18 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { useParams } from "react-router-dom";
 //routing single product: importing useParams to
 import { useDispatch, useSelector } from "react-redux";
 import CardProduct from "../components/Card";
 
-import { getProductById } from "../features/product/productSlice";
 //importing function to get single product data from API
 
 function SingleProduct() {
   const allProducts = useSelector((state) => state.product.productList);
   const { id } = useParams();
-  const dispatch = useDispatch();
 
   const renderCard = () => {
     const singleProduct = allProducts.filter((product) => {
-      return product.id == id;
+      return product.id === id;
     });
     return singleProduct.map((product) => {
       return (

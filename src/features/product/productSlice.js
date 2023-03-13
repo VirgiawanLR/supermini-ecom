@@ -26,7 +26,7 @@ export function fetchProductsData() {
 
 export function getProductById(productId) {
   return async (dispatch) => {
-    let response = await axios.get(productAPI, {
+    await axios.get(productAPI, {
       params: {
         id: productId,
       },
