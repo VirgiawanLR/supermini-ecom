@@ -1,7 +1,5 @@
 import React from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { cartSlice } from "../features/cart/cartSlices";
-import { productSlice } from "../features/product/productSlice";
+import { useSelector } from "react-redux";
 import CardProduct from "../components/Card";
 
 function CartPages() {

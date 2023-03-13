@@ -1,14 +1,13 @@
 import React, { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import CardProduct from "../components/Card";
 import { fetchCartData } from "../features/cart/cartSlices";
 
 function ProductEcom() {
-  const dispatch = useDispatch();
   const allProducts = useSelector((state) => state.product.productList);
   // const cartProducts = useSelector((state) => state.cart.cartList);
   useEffect(() => {
-    dispatch(fetchCartData());
+    fetchCartData();
   }, []);
 
   const renderCard = () => {

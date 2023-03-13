@@ -27,7 +27,7 @@ export function fetchUserData() {
 
 export function postUserData(data) {
   return async (dispatch) => {
-    const response = await axios.post(userAPI, data);
+    await axios.post(userAPI, data);
     dispatch(fetchUserData());
   };
 }

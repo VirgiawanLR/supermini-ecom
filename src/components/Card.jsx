@@ -2,7 +2,6 @@ import React from "react";
 import {
   Card,
   Stack,
-  CardHeader,
   CardBody,
   CardFooter,
   Button,
@@ -13,8 +12,7 @@ import {
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { cartSlice, postCartData } from "../features/cart/cartSlices";
-import { productSlice } from "../features/product/productSlice";
+import { postCartData } from "../features/cart/cartSlices";
 
 function CardProduct(props) {
   const [counter, setCounter] = useState(0);
@@ -22,7 +20,6 @@ function CardProduct(props) {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const cart = useSelector((state) => state.cart.cartList);
-  const allProduct = useSelector((state) => state.product.productList);
 
   const addToCart = () => {
     console.log({ ...product, sum: counter });
@@ -84,7 +81,7 @@ function CardProduct(props) {
                   sum:{" "}
                   {
                     cart.filter((item) => {
-                      return item.id == product.id;
+                      return item.id === product.id;
                     })[0].sum
                   }
                 </span>
